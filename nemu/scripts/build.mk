@@ -30,8 +30,8 @@ OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o) $(CXXSRC:%.cc=$(OBJ_DIR)/%.o)
 # Compilation patterns
 $(OBJ_DIR)/%.o: %.c
 	@echo + CC $<
-	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c -o $@ $<
+	@mkdir -p $(dir $@)//代表当前目标文件的名称
+	@$(CC) $(CFLAGS) -c -o $@ $<//代表当前依赖文件的名称
 	$(call call_fixdep, $(@:.o=.d), $@)
 
 $(OBJ_DIR)/%.o: %.cc
